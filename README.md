@@ -6,8 +6,7 @@ To run application with gradle wrapper:
 ## Docker
 To create docker image for application:
 ```
-./gradlew build
-docker build --build-arg JAR_FILE=build/libs/*.jar -t ryanrush/rrus-capco-digitalengineeringcourse .
+docker build -t ryanrush/rrus-capco-digitalengineeringcourse .
 docker run -p 8090:8090 ryanrush/rrus-capco-digitalengineeringcourse
 
 or

@@ -54,7 +54,7 @@ task integrationTest(type: Test) {
 
 task dockerBuild(type: Exec){
     workingDir "$projectDir"
-    commandLine "docker", "build", "--build-arg", "JAR_FILE=build/libs/*.jar", "-t", "ryanrush/rrus-capco-digitalengineeringcourse", "."
+    commandLine "docker", "build", "-t", "ryanrush/rrus-capco-digitalengineeringcourse", "."
 }
 
 task dockerRun(type: Exec){
@@ -62,7 +62,6 @@ task dockerRun(type: Exec){
     commandLine "docker", "run", "-p", "8090:8090", "ryanrush/rrus-capco-digitalengineeringcourse"
 }
 
-dockerBuild.dependsOn build
 dockerRun.dependsOn dockerBuild
 
 check.dependsOn integrationTest
